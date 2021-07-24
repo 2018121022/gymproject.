@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form method="POST" action="{% url 'write' %}">
+       {% csrf_token %}
+       <h4>제목</h4>
+       <input type="text" name="title">
+       <br>
+       <br>
+       <h4>본문</h4>
+       <textarea name="content" cols="40" rows="10"></textarea>
+       <br>
+       <br>
+       <input type="submit" value="제출하기">
+       <br>
+       <br>
+       <a href="{%url 'comment' %}">댓글로 돌아가기</a>
+   </form>
+</body>
+</html>

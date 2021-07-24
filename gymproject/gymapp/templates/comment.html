@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>댓글</h1>
+    <a href="{% url 'write' %}">
+        <button>후기 쓰기</button>
+    </a>
+    <ul>
+        {% for gym in gym_comment %}
+            <li>
+                <a href="{% url 'detail' gym.id %}"> 제목 : {{gym.title}}<br></a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
